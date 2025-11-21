@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     SUPABASE_ANON_KEY: str | None = None
     GEMINI_API_KEY: str
 
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
+    model_config = SettingsConfigDict(env_file=str(ENV_PATH), env_file_encoding="utf-8")
 
     @field_validator("SUPABASE_KEY", mode="after")
     @classmethod
